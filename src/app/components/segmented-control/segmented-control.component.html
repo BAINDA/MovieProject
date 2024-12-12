@@ -1,0 +1,14 @@
+@if (config && config.length > 0) {
+<div class="segmented-control-component">
+  @for (segment of config; track $index) {
+  <div
+    (click)="selectItem(segment)"
+    [ngClass]="{ 'active-item': segment.active }"
+    class="segment"
+  >
+    {{ segment.name }}
+  </div>
+  }
+</div>
+
+}

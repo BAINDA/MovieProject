@@ -1,0 +1,51 @@
+@import "../../../themes/theme.scss";
+
+.nav-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0px;
+  background: rgba(18, 24, 41, 0.93);
+  backdrop-filter: blur(4.699999809265137px);
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  .logo-section {
+    width: 40px;
+    height: 40px;
+    background-image: url("/logo.png");
+  }
+
+  ul {
+    display: flex;
+    column-gap: 29px;
+    align-items: center;
+    margin: 0;
+    li {
+      list-style: none;
+      color: $app-text-grey;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      column-gap: 9px;
+      cursor: pointer;
+
+      i {
+        color: $app-text-grey;
+      }
+    }
+    .active-item {
+      color: $app-primary;
+
+      i {
+        color: $app-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../../themes/theme.scss";
+.segmented-control-component {
+  display: flex;
+  // width: 100%;
+  width: fit-content;
+  padding: 8px;
+  background: $black-20;
+  border-radius: 8px;
+
+  .segment {
+    padding: 8px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $grey-400;
+    cursor: pointer;
+  }
+
+  .active-item {
+    background: $primary-400;
+    color: $primary-50;
+    border-radius: 8px;
+  }
+}
