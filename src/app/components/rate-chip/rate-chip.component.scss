@@ -1,0 +1,21 @@
+@import "../../../themes/theme.scss";
+
+.rate-chip-component {
+  display: flex;
+  column-gap: 5px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  width: fit-content;
+  background: rgba(0, 0, 0, 0.8);
+
+  i {
+    color: $app-accent;
+    font-weight: bold;
+  }
+
+  span {
+    font-size: 17.35;
+    font-weight: bold;
+    color: $app-accent;
+  }
+}
