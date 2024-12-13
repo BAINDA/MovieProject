@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
+import { InputComponent } from '../../components/input/input.component';
+import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
+import { OnInit } from '@angular/core';
+import { GenericHttpService } from '../../services/generic-http.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavBarComponent],
+  imports: [InputComponent, MovieCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  title: string = 'All';
+
+  constructor(private genericHttpService: GenericHttpService) {}
+
+  ngOnInit(): void {}
+}
