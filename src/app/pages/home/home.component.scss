@@ -34,9 +34,13 @@
     .movie-cards-section {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 24px;
 
       .movie-card {
-        width: calc(100% / 3);
+        width: calc((100% / 3) - 24px);
+        min-width: 300px;
+        align-self: stretch;
       }
     }
   }

@@ -18,11 +18,11 @@
     </div>
 
     <div class="movie-cards-section">
+      @for (item of movieCards; track $index) {
       <div class="movie-card">
-        @for (item of movieCards; track $index) {
         <app-movie-card [config]="item"></app-movie-card>
-        }
       </div>
+      }
     </div>
   </div>
 </div>

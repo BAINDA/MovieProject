@@ -4,6 +4,7 @@
   padding: 8px;
   background: #0f1424;
   border-radius: 15px;
+  cursor: pointer;
 
   .image-container {
     width: 100%;
@@ -22,5 +23,6 @@
     font-weight: bold;
     text-align: center;
     color: #ebeef5;
+    text-wrap: wrap;
   }
 }

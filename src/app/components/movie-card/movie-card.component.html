@@ -1,6 +1,9 @@
 @if (config) {
 
-<div class="movie-card-container">
+<div
+  (click)="config.onClick ? config.onClick() : null"
+  class="movie-card-container"
+>
   <div
     [style.background-image]="'url(' + config.img + ')'"
     class="image-container"
