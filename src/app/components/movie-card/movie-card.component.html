@@ -4,7 +4,9 @@
   <div
     [style.background-image]="'url(' + config.img + ')'"
     class="image-container"
-  ></div>
+  >
+    <app-rate-chip [rate]="config.rate" [placeDecimals]="2"></app-rate-chip>
+  </div>
 
   <p class="name">{{ config.movieName }}</p>
 </div>

@@ -7,5 +7,6 @@ export class EndPoints {
   static TV_SHOW_ID(series_id: string): string {
     return `tv/${series_id}`;
   }
-  static TRENDS: string = 'trending/all/day/?language=en-US';
+  static TRENDS: string = 'trending/all/day?language=en-US';
+  static IMAGE_BASE: string = 'https://image.tmdb.org/t/p/';
 }
