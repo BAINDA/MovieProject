@@ -8,9 +8,10 @@ import {
   TrendsResult,
 } from '../../interfaces/models/trends.interface';
 import { MovieCardConfig } from '../../interfaces/movie-card-config.interface';
-import { SegmentedControlComponent } from '../../components/segmented-control/segmented-control.component';
+
 import { SegmentedControlConfig } from '../../interfaces/ui-config/segmented-control-config.interface';
 import { Router } from '@angular/router';
+import { SegmentedControlComponent } from '../../components/segmented-control/segmented-control.component';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,20 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   title: string = 'All';
   movieCards: MovieCardConfig[] = [];
-  segments: SegmentedControlConfig[] = [];
+  segments: SegmentedControlConfig[] = [
+    {
+      name: 'All',
+      active: true,
+    },
+    {
+      name: 'Movies',
+      active: false,
+    },
+    {
+      name: 'Tv Shows ',
+      active: false,
+    },
+  ];
 
   constructor(
     private genericHttpService: GenericHttpService,
@@ -42,6 +56,11 @@ export class HomeComponent implements OnInit {
                 rate: item.vote_average,
                 onClick: () => {
                   console.log('Click :', item);
+                  if (item.first_air_date) {
+                    this.router.navigateByUrl(`tvshows/${item.id}`);
+                  } else {
+                    this.router.navigateByUrl(`movie/${item.id}`);
+                  }
                 },
               } as MovieCardConfig)
           )

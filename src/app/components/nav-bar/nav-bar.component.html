@@ -1,6 +1,6 @@
 <div class="nav-bar-container">
   <div class="nav-content">
-    <div class="logo-section"></div>
+    <div (click)="homePage()" class="logo-section"></div>
     @if (navItems && navItems.length > 0) {
     <ul>
       @for (nav of navItems; track $index) {
