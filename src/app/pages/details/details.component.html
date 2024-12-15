@@ -1,5 +1,26 @@
 <div class="detail-container">
   <div class="detail-content">
     <app-detail-banner [config]="bannerConfig"></app-detail-banner>
+
+    @if (config) {
+    <div class="detail-setion">
+      <div class="img-section"></div>
+
+      <div class="info-section">
+        <span class="title"></span>
+        <span class="overview"></span>
+        <app-rate-chip></app-rate-chip>
+
+        <div class="seperate-box">
+          @for (item of []; track $index) {
+          <div class="box">
+            <span class="box-title"></span>
+            <span class="box-description"></span>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    }
   </div>
 </div>

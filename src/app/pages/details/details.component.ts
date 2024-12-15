@@ -4,16 +4,20 @@ import { ActivatedRoute } from '@angular/router';
 import { GenericHttpService } from '../../services/generic-http.service';
 import { EndPoints } from '../../endpoints/Endpoints';
 import { DetailBannerConfig } from '../../interfaces/ui-config/detail-banner.config.interface';
+import { RateChipComponent } from '../../components/rate-chip/rate-chip.component';
+import { DetailConfig } from '../../interfaces/ui-config/detail-config.interface';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [DetailBannerComponent],
+  imports: [DetailBannerComponent, RateChipComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent implements OnInit {
   bannerConfig!: DetailBannerConfig;
+
+  config!: DetailConfig;
 
   constructor(
     private activatedRoute: ActivatedRoute,
