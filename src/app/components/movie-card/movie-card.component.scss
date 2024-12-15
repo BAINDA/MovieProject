@@ -6,18 +6,23 @@
   padding: 8px;
   background: #0f1424;
   border-radius: 15px;
-
   cursor: pointer;
 
   .image-container {
     width: 100%;
-    height: 410px;
+    height: 250px;
     border-radius: 10px;
     margin-bottom: 10px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 9px 8px;
+    object-fit: cover;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   .name {
