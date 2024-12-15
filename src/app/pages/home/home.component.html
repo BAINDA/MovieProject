@@ -3,10 +3,12 @@
     <div class="title-container">
       <p class="min-title">BAINDA</p>
 
+      @if (title) {
       <p class="title">
         {{ title }}
         <span>({{ movieCards.length }})</span>
       </p>
+      }
     </div>
 
     <div class="search-section">
