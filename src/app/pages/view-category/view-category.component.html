@@ -1,0 +1,24 @@
+<div class="view-category-container">
+  <div class="view-category-content">
+    <div class="title-container">
+      <p class="mini-title">BAINDA</p>
+      @if (title) {
+      <p class="title">
+        {{ title }} <span>{{ movieCards.length }}</span>
+      </p>
+      }
+    </div>
+
+    <div class="search-container">
+      <app-input></app-input>
+    </div>
+
+    <div class="movie-cards-section">
+      @for (item of movieCards; track $index) {
+      <div class="movie-card">
+        <app-movie-card [config]="item"></app-movie-card>
+      </div>
+      }
+    </div>
+  </div>
+</div>

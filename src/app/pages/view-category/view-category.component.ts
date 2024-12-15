@@ -5,11 +5,13 @@ import { GenericHttpService } from '../../services/generic-http.service';
 import { EndPoints } from '../../endpoints/Endpoints';
 import { MovieData, MovieResult } from '../../interfaces/movies.interface';
 import { tvData, TvResult } from '../../interfaces/tv.interface';
+import { InputComponent } from '../../components/input/input.component';
+import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 
 @Component({
   selector: 'app-view-category',
   standalone: true,
-  imports: [],
+  imports: [InputComponent, MovieCardComponent],
   templateUrl: './view-category.component.html',
   styleUrl: './view-category.component.scss',
 })
