@@ -71,6 +71,10 @@
           }
         }
       }
+
+      .vertical {
+        flex-direction: column;
+      }
     }
   }
 }

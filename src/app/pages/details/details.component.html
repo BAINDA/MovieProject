@@ -19,7 +19,7 @@
         </span>
         <app-rate-chip [rate]="config.rate" [placeDecimals]="3"></app-rate-chip>
 
-        <div class="seperate-box">
+        <div [ngClass]="{ vertical: config.isVertical }" class="seperate-box">
           @for (item of config.detailCards; track $index) {
           <div class="box">
             <span class="box-title">{{ item.title }}</span>

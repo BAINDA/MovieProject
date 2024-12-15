@@ -7,11 +7,12 @@ import { DetailBannerConfig } from '../../interfaces/ui-config/detail-banner.con
 import { RateChipComponent } from '../../components/rate-chip/rate-chip.component';
 import { DetailConfig } from '../../interfaces/ui-config/detail-config.interface';
 import { Genre } from '../../interfaces/tv-detail.interface';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [DetailBannerComponent, RateChipComponent],
+  imports: [DetailBannerComponent, RateChipComponent, NgClass],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
@@ -96,7 +97,48 @@ export class DetailsComponent implements OnInit {
           img: EndPoints.IMAGE_BASE + `/w1280/${res.backdrop_path}`,
           pageName: 'TV Shows',
           path: 'tvshows',
-          title: res.original_name,
+          title: res.name,
+        };
+
+        let result = '';
+
+        res.genres.map((item: Genre, index: number) => {
+          result +=
+            item.name + ' ' + (index === res.genres.length - 1 ? '' : ', ');
+        });
+
+        this.config = {
+          img: EndPoints.IMAGE_BASE + `/w500${res.poster_path}`,
+          description: res.overview,
+          subtitle: res.tagline,
+          rate: res.vote_average,
+          isVertical: false,
+          detailCards: [
+            {
+              title: 'Type',
+              description: 'Movie',
+            },
+            {
+              title: 'Status',
+              description: res.status,
+            },
+            {
+              title: 'First Air Date',
+              description: res.first_air_date,
+            },
+            {
+              title: 'No of Seasons',
+              description: res.number_of_seasons.toString(),
+            },
+            {
+              title: 'No of Episodes',
+              description: res.number_of_episodes.toString(),
+            },
+            {
+              title: 'Genres',
+              description: result,
+            },
+          ],
         };
       },
       error: (error: any) => {
