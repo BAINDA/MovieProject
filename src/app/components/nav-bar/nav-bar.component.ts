@@ -24,18 +24,20 @@ export class NavBarComponent {
       path: 'tvshows',
       active: false,
     },
-    {
-      name: 'Suggest Me',
-      path: 'suggests',
-      icon: 'bi bi-arrow-right',
-      active: false,
-    },
+    // {
+    //   name: 'Suggest Me',
+    //   path: 'suggests',
+    //   icon: 'bi bi-arrow-right',
+    //   active: false,
+    // },
   ];
 
   selectedNavItem(navItem: NavItemConfig) {
     this.navItems.map(
       (item: NavItemConfig) => (item.active = navItem.name === item.name)
     );
+
+    this.router.navigateByUrl(navItem.path);
   }
 
   homePage() {

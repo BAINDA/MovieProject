@@ -125,7 +125,7 @@ export class HomeComponent implements OnInit {
                 movieName: item.original_title,
                 rate: item.vote_average,
                 onClick: () => {
-                  this.router.navigateByUrl(`movie/${item.id}`);
+                  this.router.navigateByUrl(`movies/${item.id}`);
                 },
               } as MovieCardConfig)
           )
