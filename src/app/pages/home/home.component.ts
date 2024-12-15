@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
                   if (item.first_air_date) {
                     this.router.navigateByUrl(`tvshows/${item.id}`);
                   } else {
-                    this.router.navigateByUrl(`movie/${item.id}`);
+                    this.router.navigateByUrl(`movies/${item.id}`);
                   }
                 },
               } as MovieCardConfig)
