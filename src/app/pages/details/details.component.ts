@@ -43,7 +43,7 @@ export class DetailsComponent implements OnInit {
       next: (res: any) => {
         console.log('Movie Details: ', res);
         this.bannerConfig = {
-          img: EndPoints.IMAGE_BASE + `/w1280${res.backdrop_path}`,
+          img: EndPoints.IMAGE_BASE + `/original${res.backdrop_path}`,
           pageName: 'Movies',
           path: 'movies',
           title: res.original_title,
@@ -57,7 +57,7 @@ export class DetailsComponent implements OnInit {
         });
 
         this.config = {
-          img: EndPoints.IMAGE_BASE + `/w500${res.poster_path}`,
+          img: EndPoints.IMAGE_BASE + `/original${res.poster_path}`,
           description: res.overview,
           subtitle: res.tagline,
           rate: res.vote_average,
@@ -94,7 +94,7 @@ export class DetailsComponent implements OnInit {
       next: (res: any) => {
         console.log('TV Show Details: ', res);
         this.bannerConfig = {
-          img: EndPoints.IMAGE_BASE + `/w1280/${res.backdrop_path}`,
+          img: EndPoints.IMAGE_BASE + `/original/${res.backdrop_path}`,
           pageName: 'TV Shows',
           path: 'tvshows',
           title: res.name,
@@ -108,7 +108,7 @@ export class DetailsComponent implements OnInit {
         });
 
         this.config = {
-          img: EndPoints.IMAGE_BASE + `/w500${res.poster_path}`,
+          img: EndPoints.IMAGE_BASE + `/original${res.poster_path}`,
           description: res.overview,
           subtitle: res.tagline,
           rate: res.vote_average,

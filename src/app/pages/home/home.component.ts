@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
           .map(
             (item: TrendsResult) =>
               ({
-                img: EndPoints.IMAGE_BASE + `/w500/${item.backdrop_path}`,
+                img: EndPoints.IMAGE_BASE + `/original/${item.backdrop_path}`,
                 movieName: item.original_title || item.original_name,
                 rate: item.vote_average,
                 onClick: () => {
@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
           .map(
             (item: TvResult) =>
               ({
-                img: EndPoints.IMAGE_BASE + `/w500/${item.backdrop_path}`,
+                img: EndPoints.IMAGE_BASE + `/original/${item.backdrop_path}`,
                 movieName: item.original_name,
                 rate: item.vote_average,
                 onClick: () => {
@@ -121,7 +121,7 @@ export class HomeComponent implements OnInit {
           .map(
             (item: MovieResult) =>
               ({
-                img: EndPoints.IMAGE_BASE + `/w500/${item.backdrop_path}`,
+                img: EndPoints.IMAGE_BASE + `/original/${item.backdrop_path}`,
                 movieName: item.original_title,
                 rate: item.vote_average,
                 onClick: () => {

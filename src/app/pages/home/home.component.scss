@@ -4,6 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-left: auto;
+  margin-right: auto;
 
   .home-content {
     display: flex;
@@ -32,15 +38,15 @@
     }
 
     .movie-cards-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
 
       .movie-card {
-        width: calc((100% / 3) - 24px);
+        width: 100%;
         min-width: 300px;
         align-self: stretch;
+        overflow: hidden;
       }
     }
   }

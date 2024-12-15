@@ -45,7 +45,7 @@ export class ViewCategoryComponent implements OnInit {
       next: (res: MovieData) => {
         this.movieCards = res.results.map((item: MovieResult) => {
           return {
-            img: EndPoints.IMAGE_BASE + `/w500${item.poster_path}`,
+            img: EndPoints.IMAGE_BASE + `/original${item.poster_path}`,
             movieName: item.original_title,
             rate: item.vote_average,
             onClick: () => {
@@ -65,7 +65,7 @@ export class ViewCategoryComponent implements OnInit {
       next: (res: tvData) => {
         this.movieCards = res.results.map((item: TvResult) => {
           return {
-            img: EndPoints.IMAGE_BASE + `/w500${item.poster_path}`,
+            img: EndPoints.IMAGE_BASE + `/original${item.poster_path}`,
             movieName: item.original_name,
             rate: item.vote_average,
             onClick: () => {
