@@ -1,9 +1,10 @@
 export interface DetailConfig {
   img: string;
+  description: string;
   subtitle?: string;
-  rate: string;
+  rate: number;
   isVertical?: boolean;
-  detailCards: DetailCard;
+  detailCards: DetailCard[];
 }
 
 export interface DetailCard {

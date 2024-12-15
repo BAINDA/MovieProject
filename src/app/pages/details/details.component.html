@@ -4,18 +4,26 @@
 
     @if (config) {
     <div class="detail-setion">
-      <div class="img-section"></div>
+      <div
+        [style.background-image]="'url(' + config.img + ')'"
+        class="img-section"
+      ></div>
 
       <div class="info-section">
-        <span class="title"></span>
-        <span class="overview"></span>
-        <app-rate-chip></app-rate-chip>
+        @if (config.subtitle) {
+        <span class="title">{{ config.subtitle }}</span>
+        }
+
+        <span class="overview">
+          {{ config.description }}
+        </span>
+        <app-rate-chip [rate]="config.rate" [placeDecimals]="3"></app-rate-chip>
 
         <div class="seperate-box">
-          @for (item of []; track $index) {
+          @for (item of config.detailCards; track $index) {
           <div class="box">
-            <span class="box-title"></span>
-            <span class="box-description"></span>
+            <span class="box-title">{{ item.title }}</span>
+            <span class="box-description">{{ item.description }}</span>
           </div>
           }
         </div>

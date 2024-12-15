@@ -1,4 +1,4 @@
-export interface Root {
+export interface MovieDetail {
   adult: boolean;
   backdrop_path: string;
   created_by: CreatedBy[];

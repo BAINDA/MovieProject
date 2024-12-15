@@ -6,6 +6,7 @@ import { EndPoints } from '../../endpoints/Endpoints';
 import { DetailBannerConfig } from '../../interfaces/ui-config/detail-banner.config.interface';
 import { RateChipComponent } from '../../components/rate-chip/rate-chip.component';
 import { DetailConfig } from '../../interfaces/ui-config/detail-config.interface';
+import { Genre } from '../../interfaces/tv-detail.interface';
 
 @Component({
   selector: 'app-details',
@@ -45,6 +46,40 @@ export class DetailsComponent implements OnInit {
           pageName: 'Movies',
           path: 'movies',
           title: res.original_title,
+        };
+
+        let result = '';
+
+        res.genres.map((item: Genre, index: number) => {
+          result +=
+            item.name + ' ' + (index === res.genres.length - 1 ? '' : ', ');
+        });
+
+        this.config = {
+          img: EndPoints.IMAGE_BASE + `/w500${res.poster_path}`,
+          description: res.overview,
+          subtitle: res.tagline,
+          rate: res.vote_average,
+          isVertical: true,
+          detailCards: [
+            {
+              title: 'Type',
+              description: 'Movie',
+            },
+
+            {
+              title: 'Release Date',
+              description: res.release_date,
+            },
+            {
+              title: 'Run Time',
+              description: res.runtime.toString(),
+            },
+            {
+              title: 'Genres',
+              description: result,
+            },
+          ],
         };
       },
       error: (error: any) => {
