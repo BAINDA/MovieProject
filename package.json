@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "prebuild": "node replace-env.js",
+    "build": "npm run prebuild && ng build --project angular-movies --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
